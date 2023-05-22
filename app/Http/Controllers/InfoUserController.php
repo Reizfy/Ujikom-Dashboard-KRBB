@@ -7,13 +7,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
 
 class InfoUserController extends Controller
 {
 
     public function create()
     {
-        return view('laravel-examples/user-profile');
+        $user = Auth::user();
+        return view('laravel-examples/user-profile', compact('user'));
     }
 
     public function store(Request $request)
@@ -26,6 +29,7 @@ class InfoUserController extends Controller
             'location' => ['max:70'],
             'about_me'    => ['max:150'],
         ]);
+        
         if($request->get('email') != Auth::user()->email)
         {
             if(env('IS_DEMO') && Auth::user()->id == 1)
@@ -45,7 +49,7 @@ class InfoUserController extends Controller
         User::where('id',Auth::user()->id)
         ->update([
             'name'    => $attributes['name'],
-            'email' => $attribute['email'],
+            'email' => $attributes['email'],
             'phone'     => $attributes['phone'],
             'location' => $attributes['location'],
             'about_me'    => $attributes["about_me"],
