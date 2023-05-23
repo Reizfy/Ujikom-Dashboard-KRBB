@@ -269,7 +269,7 @@
   color: #fff;
   text-transform: uppercase;
   will-change: transform;
-  background-image: linear-gradient(310deg,#7928ca,#ff0080);
+  background-image: linear-gradient(310deg,#00918c,#06d7d0);
   box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
   font-weight: 700;
   line-height: 1.5;
@@ -808,7 +808,7 @@
   padding-top: 8px !important;
   display: inline !important;
   border-radius: 6px !important;
-  background-image: linear-gradient(310deg,#7928ca,#ff0080) !important;
+  background-image: linear-gradient(310deg,#00918c,#06d7d0) !important;
 }
 
 @media (max-width: 1200px) {

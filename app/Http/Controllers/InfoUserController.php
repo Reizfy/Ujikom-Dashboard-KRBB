@@ -27,7 +27,6 @@ class InfoUserController extends Controller
             'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
             'phone'     => ['max:50'],
             'location' => ['max:70'],
-            'about_me'    => ['max:150'],
         ]);
         
         if($request->get('email') != Auth::user()->email)

@@ -6,6 +6,10 @@ use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\EditMemberController;
+use App\Http\Controllers\MemberListController;
+use App\Http\Controllers\PemasukanController;
+use App\Http\Controllers\PengeluaranController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
@@ -41,13 +45,17 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('rtl');
 	})->name('rtl');
 
-	Route::get('user-management', function () {
-		return view('laravel-examples/user-management');
-	})->name('user-management');
+	Route::get('data-member', function () {
+		return view('laravel-examples/data-member');
+	})->name('data-member');
 
-	Route::get('tables', function () {
-		return view('tables');
-	})->name('tables');
+	Route::get('pemasukan', function () {
+		return view('laravel-examples/pemasukan');
+	})->name('pemasukan');
+
+	Route::get('pengeluaran', function () {
+		return view('laravel-examples/pengeluaran');
+	})->name('pengeluaran');
 
     Route::get('virtual-reality', function () {
 		return view('virtual-reality');
@@ -61,9 +69,21 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('static-sign-up');
 	})->name('sign-up');
 
+	Route::get('/data-member', 'App\Http\Controllers\MemberListController@list')->name('data-member');
+	Route::get('/data-member', [MemberListController::class, 'index'])->name('members.index');
+	Route::post('/members', 'App\Http\Controllers\InsertMemberController@store')->name('members.store');
+	Route::put('/members/{id}', [EditMemberController::class, 'update'])->name('members.update');
+	Route::delete('/members/{id}', [EditMemberController::class, 'delete'])->name('members.delete');
+
+	Route::resource('pemasukan', PemasukanController::class);
+	Route::resource('laravel-examples/pengeluaran', PengeluaranController::class);
+
+
+
+
     Route::get('/logout', [SessionsController::class, 'destroy']);
-	Route::get('/user-profile', [InfoUserController::class, 'create']);
-	Route::post('/user-profile', [InfoUserController::class, 'store']);
+	Route::get('/user-profile', [InfoUserController::class, 'create'])->name('user-profile.create');
+    Route::post('/user-profile', [InfoUserController::class, 'store'])->name('user-profile.store');
     Route::get('/login', function () {
 		return view('dashboard');
 	})->name('sign-up');
