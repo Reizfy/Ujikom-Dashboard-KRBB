@@ -6,55 +6,33 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Response;
 
 class InfoUserController extends Controller
 {
-
     public function create()
     {
         $user = Auth::user();
-        return view('laravel-examples/user-profile', compact('user'));
+        return view('user-manager/admin-profile', compact('user'));
     }
 
     public function store(Request $request)
     {
-
-        $attributes = request()->validate([
+        $user = Auth::user();
+        
+        $attributes = $request->validate([
             'name' => ['required', 'max:50'],
-            'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
-            'phone'     => ['max:50'],
+            'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore($user->id)],
+            'phone' => ['max:50'],
             'location' => ['max:70'],
-        ]);
-        
-        if($request->get('email') != Auth::user()->email)
-        {
-            if(env('IS_DEMO') && Auth::user()->id == 1)
-            {
-                return redirect()->back()->withErrors(['msg2' => 'You are in a demo version, you can\'t change the email address.']);
-                
-            }
-            
-        }
-        else{
-            $attribute = request()->validate([
-                'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
-            ]);
-        }
-        
-        
-        User::where('id',Auth::user()->id)
-        ->update([
-            'name'    => $attributes['name'],
-            'email' => $attributes['email'],
-            'phone'     => $attributes['phone'],
-            'location' => $attributes['location'],
-            'about_me'    => $attributes["about_me"],
+            'password' => ['nullable', 'string', 'min:8', 'confirmed'],
         ]);
 
+        if ($request->has('password')) {
+            $attributes['password'] = bcrypt($request->password);
+        }
 
-        return redirect('/user-profile')->with('success','Profile updated successfully');
+        $user->update($attributes);
+
+        return redirect('/admin-profile')->with('success', 'Profile updated successfully');
     }
 }

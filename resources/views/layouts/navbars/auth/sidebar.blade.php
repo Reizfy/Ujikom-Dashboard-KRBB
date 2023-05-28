@@ -31,10 +31,10 @@
         </a>
       </li>
       <li class="nav-item mt-2">
-        <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Laravel Examples</h6>
+        <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">User Managers</h6>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('user-profile') ? 'active' : '') }} " href="{{ url('user-profile') }}">
+        <a class="nav-link {{ (Request::is('admin-profile') ? 'active' : '') }} " href="{{ url('admin-profile') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <title>customer-support</title>
@@ -51,7 +51,7 @@
                     </g>
                 </svg>
             </div>
-            <span class="nav-link-text ms-1">User Profile</span>
+            <span class="nav-link-text ms-1">Admin Profile</span>
         </a>
       </li>
       <li class="nav-item pb-2">
@@ -60,6 +60,14 @@
                 <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('data-member') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
             </div>
             <span class="nav-link-text ms-1">Data Member</span>
+        </a>
+      </li>
+      <li class="nav-item pb-2">
+        <a class="nav-link {{ (Request::is('uang-kas') ? 'active' : '') }}" href="{{ url('uang-kas') }}">
+        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i style="font-size: 1rem;" class="fas fa-lg fa-money-bill ps-2 pe-2 text-center text-dark {{ (Request::is('uang-kas') ? 'text-white' : 'text-dark') }}" aria-hidden="true"></i>
+        </div>
+            <span class="nav-link-text ms-1">Uang Kas</span>
         </a>
       </li>
     </ul>

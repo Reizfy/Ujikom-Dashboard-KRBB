@@ -10,7 +10,7 @@ class MemberListController extends Controller
     public function list()
     {
         $members = Member::all();
-        return view('laravel-examples/data-member', compact('members'));
+        return view('user-manager/data-member', compact('members'));
     }
 
     public function index(Request $request)
@@ -20,7 +20,8 @@ class MemberListController extends Controller
 
         $membersQuery = Member::query()
             ->when($search, function ($query, $search) {
-                return $query->where('name', 'LIKE', '%' . $search . '%')
+                return $query->where('id', 'LIKE', '%' . $search . '%')
+                    ->orWhere('name', 'LIKE', '%' . $search . '%')
                     ->orWhere('email', 'LIKE', '%' . $search . '%')
                     ->orWhere('age', 'LIKE', '%' . $search . '%')
                     ->orWhere('phone', 'LIKE', '%' . $search . '%');
@@ -31,6 +32,6 @@ class MemberListController extends Controller
 
         $members = $membersQuery->paginate($perPage);
 
-        return view('laravel-examples/data-member', compact('members'));
+        return view('user-manager/data-member', compact('members'));
     }
 }

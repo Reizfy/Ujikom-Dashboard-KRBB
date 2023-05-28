@@ -40,7 +40,7 @@
                 <h6 class="mb-0">{{ __('Profile Information') }}</h6>
             </div>
             <div class="card-body pt-4 p-3">
-                <form action="/user-profile" method="POST" role="form text-left">
+                <form action="/admin-profile" method="POST" role="form text-left">
                     @csrf
                     @if($errors->any())
                         <div class="mt-3  alert alert-primary alert-dismissible fade show" role="alert">
@@ -89,7 +89,7 @@
                             <div class="form-group">
                                 <label for="user.phone" class="form-control-label">{{ __('Phone') }}</label>
                                 <div class="@error('user.phone')border border-danger rounded-3 @enderror">
-                                    <input class="form-control" type="tel" placeholder="40770888444" id="number" name="phone" value="{{ auth()->user()->phone }}">
+                                    <input class="form-control" type="tel" placeholder="Phone" id="number" name="phone" value="{{ auth()->user()->phone }}">
                                         @error('phone')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
@@ -105,8 +105,29 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="user-password" class="form-control-label">{{ __('New Password') }}</label>
+                                <div class="@error('password')border border-danger rounded-3 @enderror">
+                                    <input class="form-control" type="password" placeholder="New Password" id="user-password" name="password">
+                                        @error('password')
+                                            <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                        @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="user-password-confirm" class="form-control-label">{{ __('Confirm Password') }}</label>
+                                <div class="@error('password_confirmation') border border-danger rounded-3 @enderror">
+                                    <input class="form-control" type="password" placeholder="Confirm Password" id="user-password-confirm" name="password_confirmation">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Save Changes' }}</button>
+                        <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ __('Save Changes') }}</button>
                     </div>
                 </form>
 
