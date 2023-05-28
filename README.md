@@ -31,6 +31,17 @@ Atau
 
 Setup
 
+Untuk Linux Jalankan Ini
+```bash
+sudo apt-get install php8.2-zip
+```
+Sesuaikan Versi PHP nya Jika Menggunakan Versi Lain
+
+Untuk Windows
+- Locate php.ini file. (Ada Di Folder Xampp/PHP)
+- Buka Dengan Text Editor
+- Uncomment Line `;extension=gd` dan `;extension=zip` Dengan Menhapus Semicolon Di Awal Line
+
 Jalankan perintah 
 ```bash
 composer update
