@@ -63,14 +63,6 @@ DB_DATABASE=example_app
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-Opsional
-```bash
-APP_NAME=Laravel
-APP_ENV=local
-APP_KEY=base64:7ny8i06U6BGjRyeIDxeiJ1Oz3+SLjK3QIDaeesQdqWo=
-APP_DEBUG=true
-APP_URL=http://localhost
-```
 Generate key
 ```bash
 php artisan key:generate
