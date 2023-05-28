@@ -75,6 +75,9 @@ Menjalankan aplikasi
 ```bash
 php artisan serve
 ```
+Akun Default Login
+Email : admin@softui.com
+Password : secret
 
 ## License
 
