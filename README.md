@@ -3,7 +3,7 @@
 </p>
 
 # Tentang Website
-Website KRBB Adalah Website Yang Digunakan Untuk Mengelola Data Member Dan Data Uang Kas Komunitas. Website Ini Menggunakan Laravel 10 Dan Minimal PHP 8.2.4, Apabila Ada Error Saat Installasi Mungkin Ada Error Dan Kemungkinan Karena Versi PHP Yang Digunakan Tidak Support.
+Website KRBB Adalah Website Yang Digunakan Untuk Mengelola Data Member Dan Data Uang Kas Komunitas. Website Ini Menggunakan Laravel 10 Dan Minimal PHP 8.2.3, Apabila Ada Error Saat Installasi Mungkin Ada Error Dan Kemungkinan Karena Versi PHP Yang Digunakan Tidak Support.
 
 # Fitur Fitur
 - Management Data Member
