@@ -69,11 +69,17 @@
                                             </div>
                                             <div class="mb-3" id="fieldDebit">
                                                 <label for="debit" class="form-label">Debit</label>
-                                                <input type="number" class="form-control" id="debit" name="debit" min="0" step="0.01" oninput="calculateSaldo()" required>
+                                                <div class="input-group">
+                                                    <span class="input-group-text">Rp.</span>
+                                                    <input type="number" class="form-control" id="debit" name="debit" min="0" step="0.01" oninput="calculateSaldo()" required>
+                                                </div>
                                             </div>
                                             <div class="mb-3" id="fieldKredit">
                                                 <label for="kredit" class="form-label">Kredit</label>
-                                                <input type="number" class="form-control" id="kredit" name="kredit" min="0" step="0.01" oninput="calculateSaldo()" required>
+                                                <div class="input-group">
+                                                    <span class="input-group-text">Rp.</span>
+                                                    <input type="number" class="form-control" id="kredit" name="kredit" min="0" step="0.01" oninput="calculateSaldo()" required>
+                                                </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Save</button>
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
