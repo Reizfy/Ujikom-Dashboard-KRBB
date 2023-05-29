@@ -27,8 +27,12 @@ class InfoUserController extends Controller
             'password' => ['nullable', 'string', 'min:8', 'confirmed'],
         ]);
 
-        if ($request->has('password')) {
-            $attributes['password'] = bcrypt($request->password);
+        // Remove the 'password' field from the attributes array if it is empty
+        if (empty($attributes['password'])) {
+            unset($attributes['password']);
+        } else {
+            // Hash the password if it is not empty
+            $attributes['password'] = bcrypt($attributes['password']);
         }
 
         $user->update($attributes);
