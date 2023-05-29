@@ -17,7 +17,7 @@
             </div>
             <div class="col-4 text-end">
               <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                <i class="fas fa-user-circle text-lg opacity-10" aria-hidden="true"></i>
               </div>
             </div>
           </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="col-4 text-end">
               <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                <i class="fas fa-money-bill text-lg opacity-10" aria-hidden="true"></i>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@
             </div>
             <div class="col-4 text-end">
               <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                <i class="fas fas fa-arrow-up text-lg opacity-10" aria-hidden="true"></i>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
             </div>
             <div class="col-4 text-end">
               <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                <i class="fas fas fa-arrow-down text-lg opacity-10" aria-hidden="true"></i>
               </div>
             </div>
           </div>
@@ -92,11 +92,7 @@
     <div class="col-lg-12">
       <div class="card z-index-2">
         <div class="card-header pb-0">
-          <h6>Sales overview</h6>
-          <p class="text-sm">
-            <i class="fa fa-arrow-up text-success"></i>
-            <span class="font-weight-bold">4% more</span> in 2021
-          </p>
+          <h6>Uang Kas overview</h6>
         </div>
         <div class="card-body p-3">
           <div class="chart">
